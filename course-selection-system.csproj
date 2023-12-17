@@ -82,7 +82,7 @@
     <Content Include="image\男生2.jpeg" />
     <Content Include="image\男生4.jpg" />
     <Content Include="js\bootstrap.bundle.js" />
-    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.bundle.js.map" />
     <Content Include="LICENSE" />
     <Content Include="login.aspx" />
     <Content Include="manager\addNewCourse.aspx" />
