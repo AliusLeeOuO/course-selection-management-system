@@ -76,6 +76,7 @@ namespace WebApplication2.student
             {
                 // 处理异常情况
                 // 例如：显示错误消息或记录错误
+                Console.Write(ex.Message);
                 Response.Write("<script>alert('修改失败!');</script>");
             }
         }
