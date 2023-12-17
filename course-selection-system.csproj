@@ -1,0 +1,295 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B4A1B60-8906-43BA-906E-A45A0BA7A5CF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication2</RootNamespace>
+    <AssemblyName>course-selection-system</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="appsettings.json" />
+    <Content Include="appsettings.json.example" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\bootstrap.css.map" />
+    <Content Include="image\女生1.jpg" />
+    <Content Include="image\女生2.jpg" />
+    <Content Include="image\女生4.jpg" />
+    <Content Include="image\男生1.jpg" />
+    <Content Include="image\男生2.jpeg" />
+    <Content Include="image\男生4.jpg" />
+    <Content Include="js\bootstrap.bundle.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="LICENSE" />
+    <Content Include="login.aspx" />
+    <Content Include="manager\addNewCourse.aspx" />
+    <Content Include="manager\main.aspx" />
+    <Content Include="manager\manageCourse.aspx" />
+    <Content Include="manager\personInfo.aspx" />
+    <Content Include="readme.md" />
+    <Content Include="student\personInfo.aspx" />
+    <Content Include="student\modifyPersonInfo.aspx" />
+    <Content Include="student\personScore.aspx" />
+    <Content Include="student\main.aspx" />
+    <Content Include="student\selectCourse.aspx" />
+    <Content Include="student\myCourseList.aspx" />
+    <Content Include="teacher\modifyPersonInfo.aspx" />
+    <Content Include="teacher\personInfo.aspx" />
+    <Content Include="teacher\主页.aspx" />
+    <Content Include="teacher\成绩.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database.cs" />
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\addNewCourse.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>addNewCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\addNewCourse.aspx.designer.cs">
+      <DependentUpon>addNewCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\manageCourse.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>manageCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\manageCourse.aspx.designer.cs">
+      <DependentUpon>manageCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\manager.Master.cs">
+      <DependentUpon>manager.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\manager.Master.designer.cs">
+      <DependentUpon>manager.Master</DependentUpon>
+    </Compile>
+    <Compile Include="manager\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manager\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\personInfo.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>personInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manager\personInfo.aspx.designer.cs">
+      <DependentUpon>personInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="student\student.Master.cs">
+      <DependentUpon>student.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\student.Master.designer.cs">
+      <DependentUpon>student.Master</DependentUpon>
+    </Compile>
+    <Compile Include="student\personInfo.aspx.cs">
+      <DependentUpon>personInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\personInfo.aspx.designer.cs">
+      <DependentUpon>personInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\modifyPersonInfo.aspx.cs">
+      <DependentUpon>modifyPersonInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\modifyPersonInfo.aspx.designer.cs">
+      <DependentUpon>modifyPersonInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\personScore.aspx.cs">
+      <DependentUpon>personScore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\personScore.aspx.designer.cs">
+      <DependentUpon>personScore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\selectCourse.aspx.cs">
+      <DependentUpon>selectCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\selectCourse.aspx.designer.cs">
+      <DependentUpon>selectCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="student\myCourseList.aspx.cs">
+      <DependentUpon>myCourseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="student\myCourseList.aspx.designer.cs">
+      <DependentUpon>myCourseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\modifyPersonInfo.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>modifyPersonInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\modifyPersonInfo.aspx.designer.cs">
+      <DependentUpon>modifyPersonInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\teacher.Master.cs">
+      <DependentUpon>teacher.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher\teacher.Master.designer.cs">
+      <DependentUpon>teacher.Master</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\personInfo.aspx.cs">
+      <DependentUpon>personInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher\personInfo.aspx.designer.cs">
+      <DependentUpon>personInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\主页.aspx.cs">
+      <DependentUpon>主页.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher\主页.aspx.designer.cs">
+      <DependentUpon>主页.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\成绩.aspx.cs">
+      <DependentUpon>成绩.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="teacher\成绩.aspx.designer.cs">
+      <DependentUpon>成绩.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="utilities\JsonConfigReader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="manager\manager.Master" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="student\student.Master" />
+    <Content Include="teacher\teacher.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59636</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:59636/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

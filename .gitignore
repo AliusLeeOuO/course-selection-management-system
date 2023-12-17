@@ -1,0 +1,20 @@
+﻿# IDEs
+.idea/
+.vscode/
+.vs/
+
+# OS generated files
+.DS_Store/
+
+# Compiled Files
+bin/
+obj/
+packages/
+
+# Settings
+appsettings.json
+
+# User-specific files
+*.suo
+*.user
+*.DotSettings.user

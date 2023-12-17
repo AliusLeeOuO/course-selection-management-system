@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="manager.master.cs" Inherits="WebApplication2.manager.manager" %>
+
+<!DOCTYPE html>
+<html lang="zh">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="../css/bootstrap.css" rel="stylesheet"/>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <style>
+       .manager-container {
+           max-width: 1400px;
+           margin:  20px auto;
+       }
+    </style>
+</head>
+<body>
+<form id="form1" runat="server">
+    <div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">选课管理系统</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                管理
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/manager/manageCourse.aspx">管理课程信息</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                个人信息
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/manager/personInfo.aspx">个人信息查看</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/student/modifyPersonInfo.aspx">个人信息修改</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                课程信息
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="/student/myCourseList.aspx">课表查询</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/student/selectCourse.aspx">学生选课</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/student/personScore.aspx">个人成绩</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <asp:Label ID="Label1" runat="server" Text="登入身份：管理员"></asp:Label>
+                        <asp:Label ID="lbl_id" runat="server" Text="Label"></asp:Label>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="manager-container">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+</form>
+</body>
+</html>

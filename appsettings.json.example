@@ -1,0 +1,5 @@
+﻿{
+  "DatabaseConfig": {
+    "ConnectionString": "server=<your_sql_server_host>,<your_sql_server_port>;database=<your_sql_server_db>;UID=<your_sql_server_user>;PWD=<your_sql_server_password>;"
+  }
+}
