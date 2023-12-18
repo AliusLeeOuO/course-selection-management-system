@@ -75,12 +75,6 @@
     <Content Include="appsettings.json.example" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.css.map" />
-    <Content Include="image\女生1.jpg" />
-    <Content Include="image\女生2.jpg" />
-    <Content Include="image\女生4.jpg" />
-    <Content Include="image\男生1.jpg" />
-    <Content Include="image\男生2.jpeg" />
-    <Content Include="image\男生4.jpg" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.js.map" />
     <Content Include="LICENSE" />
