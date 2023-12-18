@@ -90,7 +90,9 @@
     <Content Include="student\main.aspx" />
     <Content Include="student\selectCourse.aspx" />
     <Content Include="student\myCourseList.aspx" />
+    <Content Include="teacher\addNewCourse.aspx" />
     <Content Include="teacher\modifyPersonInfo.aspx" />
+    <Content Include="teacher\myCourse.aspx" />
     <Content Include="teacher\personInfo.aspx" />
     <Content Include="teacher\main.aspx" />
     <Content Include="teacher\manageCourse.aspx" />
@@ -195,12 +197,26 @@
     <Compile Include="student\myCourseList.aspx.designer.cs">
       <DependentUpon>myCourseList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="teacher\addNewCourse.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>addNewCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\addNewCourse.aspx.designer.cs">
+      <DependentUpon>addNewCourse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="teacher\modifyPersonInfo.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>modifyPersonInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="teacher\modifyPersonInfo.aspx.designer.cs">
       <DependentUpon>modifyPersonInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\myCourse.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>myCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="teacher\myCourse.aspx.designer.cs">
+      <DependentUpon>myCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="teacher\teacher.Master.cs">
       <DependentUpon>teacher.Master</DependentUpon>

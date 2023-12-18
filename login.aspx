@@ -60,7 +60,7 @@
 <body>
 <form id="form1" runat="server">
     <div class="main">
-        <h2>登录身份</h2>
+        <h2>选课管理系统</h2>
         <div class="form-group">
             <label for="DropDownList1">选择身份</label>
             <asp:DropDownList ID="DropDownList1" CssClass="form-select" runat="server">

@@ -36,7 +36,7 @@ namespace WebApplication2.student
                 DataRowView rowView = (DataRowView)e.Row.DataItem;
         
                 string kclx = rowView["kclx"].ToString().Trim();
-                if (kclx == "必选课")
+                if (kclx == "必修课")
                 {
                     e.Row.Cells[1].ForeColor = Color.Red; // 假设课程名称在第二列
                 }

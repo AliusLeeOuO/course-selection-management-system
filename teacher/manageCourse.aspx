@@ -5,19 +5,22 @@
       width: 200px;
       display: inline-block;
     }
+    .search-condition > div {
+      margin-bottom: 10px;
+    }
   </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <div>
-    <div>
+    <div class="search-condition">
       <div>
-        课程:<asp:DropDownList ID="ddlt_kc" runat="server" CssClass="form-select input-inline"></asp:DropDownList>
+        课程：<asp:DropDownList ID="ddlt_kc" runat="server" CssClass="form-select input-inline"></asp:DropDownList>
         <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="查询" OnClick="Button1_Click"/>
       </div>
       <asp:Panel ID="PanelPercentage" runat="server" Visible="false">
         <div>
-          平时成绩占比:<asp:TextBox CssClass="form-control input-inline" ID="tbx_bfbps" runat="server"></asp:TextBox>%
-          期末成绩占比:<asp:TextBox CssClass="form-control input-inline" ID="tbx_bfbqm" runat="server"></asp:TextBox>%
+          平时成绩占比：<asp:TextBox CssClass="form-control input-inline" ID="tbx_bfbps" runat="server"></asp:TextBox>%
+          期末成绩占比：<asp:TextBox CssClass="form-control input-inline" ID="tbx_bfbqm" runat="server"></asp:TextBox>%
           <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" Text="保存" OnClick="Button2_Click"/>
         </div>
       </asp:Panel>
