@@ -25,7 +25,7 @@
         </div>
       </asp:Panel>
     </div>
-    <asp:GridView ID="GridViewCJ" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False">
+    <asp:GridView ID="GridViewCJ" runat="server" CssClass="table table-striped table-bordered" AutoGenerateColumns="False" DataKeyNames="id">
       <Columns>
         <asp:BoundField DataField="xh" HeaderText="学号"/>
         <asp:BoundField DataField="xm" HeaderText="姓名"/>

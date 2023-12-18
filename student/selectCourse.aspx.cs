@@ -44,9 +44,7 @@ namespace WebApplication2.student
         private void insert(string xh, string kcdm)
         {
             string sql = "insert into kc_xs(xh,kcdm) values('" + xh + "','" + kcdm + "')";
-
-            Console.WriteLine(sql);
-
+            
             Database db = new Database();
             db.ExecSQL(sql);
         }
@@ -63,8 +61,6 @@ namespace WebApplication2.student
                 {
                     // 获取课程代码
                     string kcdm = row.Cells[1].Text; // 假设课程代码位于第二列
-                    // 在控制台打印所有被选中的课程代码
-                    Console.WriteLine(kcdm);
                     insert(xh, kcdm); // 插入新的选课记录
                 }
             }

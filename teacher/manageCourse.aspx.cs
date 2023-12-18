@@ -52,13 +52,17 @@ namespace WebApplication2.teacher
             if (!string.IsNullOrEmpty(kcdm))
             {
                 Database db = new Database();
-                string sql =
-                    "SELECT kc_xs.id, xs.xh, xs.xm, cj_ps, cj_qm, cj FROM xs, kc_xs WHERE xs.xh = kc_xs.xh AND kc_xs.kcdm = '" +
-                    kcdm + "'";
+                // 确保 SQL 查询返回包含成绩的数据
+                string sql = "SELECT kc_xs.id, xs.xh, xs.xm, cj_ps, cj_qm, cj FROM xs " +
+                             "JOIN kc_xs ON xs.xh = kc_xs.xh " +
+                             "JOIN kc ON kc_xs.kcdm = kc.kcdm " +
+                             "WHERE kc.kcdm = '" + kcdm + "'";
+
                 DataTable dt = db.SelectSQL(sql);
                 GridViewCJ.DataSource = dt;
                 GridViewCJ.DataBind();
 
+                // 获取并设置平时成绩占比和期末成绩占比
                 sql = "SELECT bfb_ps, bfb_qm FROM kc WHERE kcdm = '" + kcdm + "'";
                 dt = db.SelectSQL(sql);
                 if (dt.Rows.Count > 0)
@@ -66,6 +70,10 @@ namespace WebApplication2.teacher
                     tbx_bfbps.Text = dt.Rows[0]["bfb_ps"].ToString();
                     tbx_bfbqm.Text = dt.Rows[0]["bfb_qm"].ToString();
                     PanelPercentage.Visible = true;
+                }
+                else
+                {
+                    PanelPercentage.Visible = false;
                 }
             }
             else
@@ -75,6 +83,7 @@ namespace WebApplication2.teacher
                 PanelPercentage.Visible = false;
             }
         }
+
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -91,7 +100,7 @@ namespace WebApplication2.teacher
             }
 
             UpdateCoursePercentage(bfb_ps, bfb_qm);
-            UpdateStudentScores(bfb_ps, bfb_qm);
+            UpdateStudentScores();
             Master.ShowModal("保存成功");
             BindStudentScores();
         }
@@ -138,28 +147,29 @@ namespace WebApplication2.teacher
             db.ExecSQL(sql);
         }
 
-        private void UpdateStudentScores(double bfb_ps, double bfb_qm)
+        private void UpdateStudentScores()
         {
             string kcdm = ddlt_kc.SelectedValue;
+            double bfb_ps = Convert.ToDouble(tbx_bfbps.Text.Trim());
+            double bfb_qm = Convert.ToDouble(tbx_bfbqm.Text.Trim());
 
             foreach (GridViewRow row in GridViewCJ.Rows)
             {
-                var lbl_id = row.FindControl("lbl_id") as Label;
+                var id = GridViewCJ.DataKeys[row.RowIndex].Value;
                 var txb_pscj = row.FindControl("txb_pscj") as TextBox;
                 var txb_qmcj = row.FindControl("txb_qmcj") as TextBox;
-
-                if (txb_pscj != null && txb_qmcj != null && lbl_id != null)
+                
+                if (txb_pscj != null && txb_qmcj != null && id != null)
                 {
                     double cj_ps = Convert.ToDouble(txb_pscj.Text);
                     double cj_qm = Convert.ToDouble(txb_qmcj.Text);
                     double cj = cj_ps * bfb_ps / 100.0 + cj_qm * bfb_qm / 100.0;
-
                     Database db = new Database();
-                    string sql = "UPDATE kc_xs SET cj_ps=" + cj_ps + ", cj_qm=" + cj_qm + ", cj=" + cj + " WHERE id=" +
-                                 lbl_id.Text;
+                    string sql = "UPDATE kc_xs SET cj_ps=" + cj_ps + ", cj_qm=" + cj_qm + ", cj=" + cj + " WHERE id=" + id + " and kcdm='" + kcdm + "'";
                     db.ExecSQL(sql);
                 }
             }
         }
+
     }
 }

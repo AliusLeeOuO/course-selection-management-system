@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
   <h4 style="margin-bottom: 20px;">我的课程</h4>
-  <div>
+  <div style="margin-bottom: 10px;">
     <asp:Button ID="AddCourseButton" CssClass="btn btn-primary" runat="server" Text="添加课程" OnClick="AddCourseButton_Click"/>
   </div>
   <asp:GridView ID="GridViewCourses" runat="server" CssClass="table table-bordered" AutoGenerateColumns="False">
