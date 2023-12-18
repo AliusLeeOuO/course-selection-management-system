@@ -11,9 +11,6 @@ namespace WebApplication2.teacher
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            // 获取对 Master Page 的引用
-            var master = this.Master as WebApplication2.teacher.teacher;
-
             if (string.IsNullOrWhiteSpace(txtCourseName.Text) ||
                 string.IsNullOrWhiteSpace(txtCredits.Text) ||
                 string.IsNullOrWhiteSpace(txtUsualScorePercent.Text) ||
@@ -21,7 +18,7 @@ namespace WebApplication2.teacher
                 string.IsNullOrWhiteSpace(txtDirection.Text))
             {
                 // 显示错误消息：所有字段都必须填写
-                master.ShowModal("所有字段都必须填写！");
+                Master.ShowModal("所有字段都必须填写！");
                 return;
             }
 
@@ -32,7 +29,7 @@ namespace WebApplication2.teacher
                 Math.Abs(usualScorePercentCalc + finalScorePercentCalc - 100) > 0.01)
             {
                 // 显示错误消息：平时分占比和期末分占比之和必须等于 100
-                master.ShowModal("平时分占比和期末分占比之和必须等于 100！");
+                Master.ShowModal("平时分占比和期末分占比之和必须等于 100！");
                 return;
             }
 
@@ -56,13 +53,13 @@ namespace WebApplication2.teacher
                 db.ExecSQL(sql);
 
                 // 显示成功信息
-                master.ShowModal("课程添加成功！");
+                Master.ShowModal("课程添加成功！");
                 Response.Redirect("~/teacher/myCourse.aspx");
             }
             catch (Exception ex)
             {
                 // 错误处理：显示错误消息
-                master.ShowModal("添加课程时出错：" + ex.Message);
+                Master.ShowModal("添加课程时出错：" + ex.Message);
             }
         }
     }

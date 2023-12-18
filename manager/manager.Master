@@ -4,15 +4,14 @@
 <html lang="zh">
 <head runat="server">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title></title>
+  <title>管理员端 - 选课管理系统</title>
   <asp:ContentPlaceHolder ID="head" runat="server">
   </asp:ContentPlaceHolder>
   <link href="../css/bootstrap.css" rel="stylesheet"/>
   <script src="../js/bootstrap.bundle.js"></script>
   <style>
-       .manager-container {
-           max-width: 1400px;
-           margin:  20px auto;
+       nav {
+           margin-bottom: 20px;
        }
     </style>
 </head>
@@ -46,9 +45,11 @@
         </div>
       </div>
     </nav>
-    <div class="manager-container">
-      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-      </asp:ContentPlaceHolder>
+    <div class="container">
+      <div class="row">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
     </div>
   </div>
 </form>

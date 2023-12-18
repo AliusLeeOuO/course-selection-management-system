@@ -16,15 +16,7 @@ namespace WebApplication2.student
                 }
             }
         }
-
-        private void ShowModal(string message)
-        {
-            lblModalBody.Text = message;
-            string script =
-                "const myModal = new bootstrap.Modal(document.getElementById('alertModal')); myModal.show();";
-            ClientScript.RegisterStartupScript(this.GetType(), "ShowModalScript", script, true);
-        }
-
+        
         private void BindGridView()
         {
             string xh = Session["xh"].ToString();
@@ -78,7 +70,7 @@ namespace WebApplication2.student
             }
 
             BindGridView(); // 重新绑定数据，以反映新的选课状态
-            ShowModal("保存成功!");
+            Master.ShowModal("保存成功!");
         }
     }
 }

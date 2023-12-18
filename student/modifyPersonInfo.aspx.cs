@@ -21,13 +21,6 @@ namespace WebApplication2.student
             }
         }
         
-        private void ShowModal(string message)
-        {
-            lblModalBody.Text = message;
-            string script = "const myModal = new bootstrap.Modal(document.getElementById('alertModal')); myModal.show();";
-            ClientScript.RegisterStartupScript(this.GetType(), "ShowModalScript", script, true);
-        }
-
         private void bind()
         {
             string xh = Session["xh"].ToString();
@@ -75,7 +68,7 @@ namespace WebApplication2.student
                 Database db = new Database();
                 db.ExecSQL(sql); // 假设 ExecSQL 方法执行 SQL 语句
                 // 可以在这里添加成功更新后的操作，比如显示消息或重定向
-                ShowModal("修改成功!");
+                Master.ShowModal("修改成功!");
                 // 重定向到个人信息页面
                 Response.Redirect("/student/personInfo.aspx");
             }
@@ -84,7 +77,7 @@ namespace WebApplication2.student
                 // 处理异常情况
                 // 例如：显示错误消息或记录错误
                 Console.Write(ex.Message);
-                ShowModal("修改失败!");
+                Master.ShowModal("修改失败!");
             }
         }
     }

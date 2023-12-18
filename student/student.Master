@@ -3,17 +3,16 @@
 <html lang="zh">
 <head runat="server">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title></title>
-  <asp:ContentPlaceHolder ID="head" runat="server">
-  </asp:ContentPlaceHolder>
+  <title>学生端 - 选课管理系统</title>
   <link href="../css/bootstrap.css" rel="stylesheet"/>
   <script src="../js/bootstrap.bundle.js"></script>
   <style>
-    .student-container {
-      max-width: 1400px;
-      margin:  20px auto;
+    nav {
+      margin-bottom: 20px;
     }
   </style>
+  <asp:ContentPlaceHolder ID="head" runat="server">
+  </asp:ContentPlaceHolder>
 </head>
 <body>
 <form id="form1" runat="server">
@@ -39,7 +38,6 @@
                 </li>
               </ul>
             </li>
-
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 课程信息
@@ -61,13 +59,32 @@
             <asp:Label ID="Label1" runat="server" Text="登入身份：学生"></asp:Label>
             <asp:Label ID="lbl_xh" runat="server" Text="Label"></asp:Label>
             <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" Text="退出" OnClick="logout"/>
-            </form>
+          </form>
         </div>
       </div>
     </nav>
-    <div class="student-container">
-      <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
-      </asp:ContentPlaceHolder>
+    <div class="container">
+      <div class="row">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        </asp:ContentPlaceHolder>
+      </div>
+    </div>
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">提示信息</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <asp:Label ID="lblModalBody" runat="server" Text=""></asp:Label>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </form>

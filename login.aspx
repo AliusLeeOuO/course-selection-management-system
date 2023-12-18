@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>Login Page</title>
+  <title>登录 - 选课管理系统</title>
   <link href="/css/bootstrap.css" rel="stylesheet"/>
   <script src="/js/bootstrap.bundle.js"></script>
   <style>
