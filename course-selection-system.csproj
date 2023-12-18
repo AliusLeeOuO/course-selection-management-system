@@ -98,8 +98,8 @@
     <Content Include="student\myCourseList.aspx" />
     <Content Include="teacher\modifyPersonInfo.aspx" />
     <Content Include="teacher\personInfo.aspx" />
-    <Content Include="teacher\主页.aspx" />
-    <Content Include="teacher\成绩.aspx" />
+    <Content Include="teacher\main.aspx" />
+    <Content Include="teacher\manageCourse.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -222,19 +222,19 @@
     <Compile Include="teacher\personInfo.aspx.designer.cs">
       <DependentUpon>personInfo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="teacher\主页.aspx.cs">
-      <DependentUpon>主页.aspx</DependentUpon>
+    <Compile Include="teacher\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="teacher\主页.aspx.designer.cs">
-      <DependentUpon>主页.aspx</DependentUpon>
+    <Compile Include="teacher\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
     </Compile>
-    <Compile Include="teacher\成绩.aspx.cs">
-      <DependentUpon>成绩.aspx</DependentUpon>
+    <Compile Include="teacher\manageCourse.aspx.cs">
+      <DependentUpon>manageCourse.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="teacher\成绩.aspx.designer.cs">
-      <DependentUpon>成绩.aspx</DependentUpon>
+    <Compile Include="teacher\manageCourse.aspx.designer.cs">
+      <DependentUpon>manageCourse.aspx</DependentUpon>
     </Compile>
     <Compile Include="utilities\JsonConfigReader.cs" />
   </ItemGroup>

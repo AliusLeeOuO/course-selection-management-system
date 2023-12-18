@@ -39,15 +39,15 @@ namespace WebApplication2
             DataTable ds = db.SelectSQL(sql);
             if (ds.Rows.Count > 0)
             {
-                if (DropDownList1.SelectedValue.ToString() == "3")
+                if (DropDownList1.SelectedValue == "3")
                 {
                     Session["xh"] = ds.Rows[0]["xh"].ToString();
                     Response.Redirect("student//main.aspx");
                 }
-                else if (DropDownList1.SelectedValue.ToString() == "2")
+                else if (DropDownList1.SelectedValue == "2")
                 {
                     Session["id_ls"] = ds.Rows[0]["id"].ToString();//绑定老师的id
-                    Response.Redirect("teacher//主页.aspx");
+                    Response.Redirect("teacher//main.aspx");
                 } else if (DropDownList1.SelectedValue == "1")
                 {
                     Session["id_manager"] = ds.Rows[0]["managerId"].ToString();
@@ -57,7 +57,7 @@ namespace WebApplication2
             }
             else
             {
-                TextBox1.Text = "账号或密码错误！";
+                Label1.Text = "账号或密码错误！";
             }
         }
     }

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace WebApplication2.teacher
 {
@@ -14,8 +10,17 @@ namespace WebApplication2.teacher
             if (Session["id_ls"] != null)
             {
                 lbl_dm.Text = Session["id_ls"].ToString();
-                //lbl_dm.Text = Session["dm"].ToString();
             }
         }
+        
+        public void ShowModal(string message)
+        {
+            lblModalBody.Text = message;
+            string script = "const myModal = new bootstrap.Modal(document.getElementById('alertModal')); myModal.show();";
+
+            // 从当前 Page 获取 ScriptManager 并注册脚本
+            ScriptManager.RegisterStartupScript(this.Page, this.Page.GetType(), "ShowModalScript", script, true);
+        }
+
     }
 }

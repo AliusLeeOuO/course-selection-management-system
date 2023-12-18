@@ -10,8 +10,8 @@ namespace WebApplication2.student
         {
             if (Session["xh"] == null)
             {
-                Response.Write("<SCRIPT LANGUAGE=\"JavaScript\">alert('你还没有登录');window.location.href='../login.aspx';</SCRIPT>");
-
+                Response.Write("<script>alert('你还没有登录');</script>");
+                Response.Redirect("../login.aspx");
             }
             else
             {

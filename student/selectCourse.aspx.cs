@@ -17,6 +17,13 @@ namespace WebApplication2.student
             }
         }
         
+        private void ShowModal(string message)
+        {
+            lblModalBody.Text = message;
+            string script = "const myModal = new bootstrap.Modal(document.getElementById('alertModal')); myModal.show();";
+            ClientScript.RegisterStartupScript(this.GetType(), "ShowModalScript", script, true);
+        }
+        
         private void BindGridView()
         {
             string xh = Session["xh"].ToString();
@@ -63,15 +70,12 @@ namespace WebApplication2.student
                     string kcdm = row.Cells[1].Text; // 假设课程代码位于第二列
                     // 在控制台打印所有被选中的课程代码
                     Console.WriteLine(kcdm);
-                    
-                    
-                    
                     insert(xh, kcdm); // 插入新的选课记录
                 }
             }
 
             BindGridView(); // 重新绑定数据，以反映新的选课状态
-            Response.Write("<script>alert('保存成功!');</script>"); // 显示保存成功的消息
+            ShowModal("保存成功!");
         }
 
     }

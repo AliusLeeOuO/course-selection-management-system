@@ -11,7 +11,7 @@ namespace WebApplication2.teacher
 {
 
 
-    public partial class 成绩
+    public partial class manageCourse
     {
 
         /// <summary>
@@ -33,13 +33,13 @@ namespace WebApplication2.teacher
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// ddlt_cj control.
+        /// PanelPercentage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList ddlt_cj;
+        protected global::System.Web.UI.WebControls.Panel PanelPercentage;
 
         /// <summary>
         /// tbx_bfbps control.
@@ -67,6 +67,15 @@ namespace WebApplication2.teacher
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
+        /// GridViewCJ control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridViewCJ;
 
         /// <summary>
         /// Master property.
