@@ -16,46 +16,49 @@ namespace WebApplication2.student
                 }
             }
         }
-        
+
         private void ShowModal(string message)
         {
             lblModalBody.Text = message;
-            string script = "const myModal = new bootstrap.Modal(document.getElementById('alertModal')); myModal.show();";
+            string script =
+                "const myModal = new bootstrap.Modal(document.getElementById('alertModal')); myModal.show();";
             ClientScript.RegisterStartupScript(this.GetType(), "ShowModalScript", script, true);
         }
-        
+
         private void BindGridView()
         {
             string xh = Session["xh"].ToString();
-            string sql = "SELECT kcdm, kcmc, dm, xm, xf, dd, (SELECT COUNT(*) FROM kc_xs WHERE xh='" + xh + "' AND kcdm=kc.kcdm) AS flag, kclx FROM kc, ls WHERE kc.id_ls=ls.id";
+            string sql = "SELECT kcdm, kcmc, dm, xm, xf, dd, (SELECT COUNT(*) FROM kc_xs WHERE xh='" + xh +
+                         "' AND kcdm=kc.kcdm) AS flag, kclx FROM kc, ls WHERE kc.id_ls=ls.id and status = '1'";
             Database db = new Database();
             DataTable dt = db.SelectSQL(sql);
 
             GridView1.DataSource = dt;
             GridView1.DataBind();
         }
-        
+
         protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             // 在这里可以对每一行的数据进行处理
         }
+
         private void delete(string xh)
         {
-            string sql = "delete from kc_xs where xh='"+xh+"'";
+            string sql = "delete from kc_xs where xh='" + xh + "'";
             Database db = new Database();
             db.ExecSQL(sql);
         }
 
-        private void insert(string xh,string kcdm)
+        private void insert(string xh, string kcdm)
         {
-            string sql = "insert into kc_xs(xh,kcdm) values('"+xh+ "','" + kcdm + "')";
-            
+            string sql = "insert into kc_xs(xh,kcdm) values('" + xh + "','" + kcdm + "')";
+
             Console.WriteLine(sql);
-            
+
             Database db = new Database();
             db.ExecSQL(sql);
         }
-        
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             string xh = Session["xh"].ToString();
@@ -77,6 +80,5 @@ namespace WebApplication2.student
             BindGridView(); // 重新绑定数据，以反映新的选课状态
             ShowModal("保存成功!");
         }
-
     }
 }

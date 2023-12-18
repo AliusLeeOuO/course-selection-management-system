@@ -2,5 +2,5 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  欢迎<asp:Label ID="lbl_txm" runat="server" Text="Label"></asp:Label>老师登录教师端
+  欢迎登录教师端
 </asp:Content>

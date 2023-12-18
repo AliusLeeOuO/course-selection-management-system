@@ -79,10 +79,8 @@
     <Content Include="js\bootstrap.bundle.js.map" />
     <Content Include="LICENSE" />
     <Content Include="login.aspx" />
-    <Content Include="manager\addNewCourse.aspx" />
     <Content Include="manager\main.aspx" />
     <Content Include="manager\manageCourse.aspx" />
-    <Content Include="manager\personInfo.aspx" />
     <Content Include="readme.md" />
     <Content Include="student\personInfo.aspx" />
     <Content Include="student\modifyPersonInfo.aspx" />
@@ -107,13 +105,6 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="manager\addNewCourse.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>addNewCourse.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="manager\addNewCourse.aspx.designer.cs">
-      <DependentUpon>addNewCourse.aspx</DependentUpon>
-    </Compile>
     <Compile Include="manager\manageCourse.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>manageCourse.aspx</DependentUpon>
@@ -134,13 +125,6 @@
     </Compile>
     <Compile Include="manager\main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="manager\personInfo.aspx.cs">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>personInfo.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="manager\personInfo.aspx.designer.cs">
-      <DependentUpon>personInfo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

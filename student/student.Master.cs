@@ -11,5 +11,13 @@ namespace WebApplication2.student
                 lbl_xh.Text = Session["xh"].ToString();
             }
         }
+
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["id_manager"] = null;
+            Session["id_ls"] = null;
+            Session["xh"] = null;
+            Response.Redirect("../login.aspx");
+        }
     }
 }

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+
 
 namespace WebApplication2.teacher
 {
@@ -11,8 +7,7 @@ namespace WebApplication2.teacher
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           // lbl_txm.Text = Session["xm"].ToString();
-
+            Response.Redirect("~/teacher/personInfo.aspx");
         }
     }
 }

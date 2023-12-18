@@ -16,5 +16,12 @@ namespace WebApplication2.manager
                 lbl_id.Text = Session["id_manager"].ToString();
             }
         }
+        protected void logout(object sender, EventArgs e)
+        {
+            Session["id_manager"] = null;
+            Session["id_ls"] = null;
+            Session["xh"] = null;
+            Response.Redirect("../login.aspx");
+        }
     }
 }

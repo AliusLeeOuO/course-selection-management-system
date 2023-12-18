@@ -13,6 +13,11 @@
       <asp:BoundField DataField="xf" HeaderText="学分"/>
       <asp:BoundField DataField="kclx" HeaderText="课程类型"/>
       <asp:BoundField DataField="dd" HeaderText="地点"/>
+      <asp:TemplateField HeaderText="状态">
+        <ItemTemplate>
+          <%# Convert.ToBoolean(Eval("status")) ? "开启" : "关闭" %>
+        </ItemTemplate>
+      </asp:TemplateField>
     </Columns>
   </asp:GridView>
 </asp:Content>

@@ -60,7 +60,8 @@
           <form class="d-flex" role="search">
             <asp:Label ID="Label1" runat="server" Text="登入身份：学生"></asp:Label>
             <asp:Label ID="lbl_xh" runat="server" Text="Label"></asp:Label>
-          </form>
+            <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" Text="退出" OnClick="logout"/>
+            </form>
         </div>
       </div>
     </nav>

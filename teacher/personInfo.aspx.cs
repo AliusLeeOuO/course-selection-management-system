@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Globalization;
 
 namespace WebApplication2.teacher
 {
@@ -30,6 +31,13 @@ namespace WebApplication2.teacher
                 lbl_xb.Text = dt.Rows[0]["xb"].ToString();
                 lbl_dm.Text = dt.Rows[0]["dm"].ToString();
                 lbl_cs.Text = dt.Rows[0]["csrq"].ToString();
+                
+                if (DateTime.TryParseExact(lbl_cs.Text, "yyyy年M月d日 dddd tt h:mm:ss", new CultureInfo("zh-CN"), DateTimeStyles.None, out DateTime csrq))
+                {
+                    lbl_cs.Text = csrq.ToString("yyyy-MM-dd");
+                }
+                
+                
                 lbl_id.Text = dt.Rows[0]["id"].ToString();
                 lbl_dh.Text = dt.Rows[0]["dh"].ToString();
             }

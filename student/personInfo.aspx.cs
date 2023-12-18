@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Globalization;
 
 
 namespace WebApplication2.student
@@ -24,6 +25,12 @@ namespace WebApplication2.student
                 Label2.Text = dr["xb"].ToString();
                 Label3.Text = dr["mz"].ToString();
                 Label4.Text = dr["csrq"].ToString();
+                
+                if (DateTime.TryParseExact(Label4.Text, "yyyy年M月d日 dddd tt h:mm:ss", new CultureInfo("zh-CN"), DateTimeStyles.None, out DateTime csrq))
+                {
+                    Label4.Text = csrq.ToString("yyyy-MM-dd");
+                }
+                
                 Label5.Text = dr["xy"].ToString();
                 Label6.Text = dr["zy"].ToString();
                 Label7.Text = dr["bj"].ToString();
